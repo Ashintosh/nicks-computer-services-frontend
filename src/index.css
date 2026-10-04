@@ -1,30 +1,18 @@
-@import "./styles/fonts.css";
+@import './styles/fonts.css';
 
 :root {
-  /* Brand colors */
-  --color-primary: #2563eb;
-  --color-primary-dark: #1d4ed8;
-  --color-primary-light: #dbeafe;
-
-  /* Accent */
-  --color-accent: #14b8a6;
-
   /* Backgrounds */
-  --color-background: #06161C;
-  --color-background-alt: #071B24;
-  --color-background-dark: #0f172a;
-
-  /* Text */
+  --color-background: #06161c;
+  --color-background-alt: #071b24;
+  --color-background-hover: #0d3038; /* Accent */
+  --color-accent: #2dd4bf;
+  --color-accent-dark: #0d9488; /* Text */
   --color-text: #f3f3f3;
-  --color-text-muted: #64748b;
-  --color-text-light: #f8fafc;
-
-  /* UI */
-  --color-border: #1e313a;
+  --color-text-muted: #b8c9ce;
+  --color-text-light: #ffffff; /* Borders */
+  --color-border: #17323b; /* Status */
   --color-success: #16a34a;
-  --color-error: #dc2626;
-
-  /* Spacing */
+  --color-error: #dc2626; /* Spacing */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
@@ -32,15 +20,11 @@
   --spacing-xl: 2rem;
   --spacing-2xl: 3rem;
   --spacing-3xl: 4rem;
-  --spacing-4xl: 6rem;
-
-  /* Border radius */
+  --spacing-4xl: 6rem; /* Border radius */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
-  --radius-lg: 1rem;
-
-  /* Typography */
-  --font-family: "Sarabun", system-ui, sans-serif;
+  --radius-lg: 1rem; /* Typography */
+  --font-family: 'Sarabun', system-ui, sans-serif;
 }
 
 * {

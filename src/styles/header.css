@@ -1,0 +1,468 @@
+/* ==============================
+   Header
+================================ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0;
+  background: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 0 0 transparent;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.site-header.scrolled {
+  background: rgba(6, 22, 28, 0.97);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* ==============================
+   Header Contact Bar
+================================ */
+
+.site-header .header-top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-lg);
+
+  width: 100%;
+  max-width: none;
+  min-height: 40px;
+  max-height: 40px;
+  margin: 0;
+  padding: var(--spacing-sm) max(calc((100% - 1200px) / 2), var(--spacing-md));
+
+  overflow: hidden;
+  background: var(--color-background-alt);
+  border-radius: 0;
+  opacity: 1;
+  transform: translateY(0);
+
+  transition:
+    max-height 0.3s ease,
+    min-height 0.3s ease,
+    padding 0.3s ease,
+    opacity 0.25s ease,
+    transform 0.3s ease;
+}
+
+.site-header.scrolled .header-top {
+  min-height: 0;
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+}
+
+.header-tagline {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-right: auto;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ==============================
+   Contact Links
+================================ */
+
+.phone-link,
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+.phone-link svg,
+.contact-link svg {
+  color: var(--color-accent);
+}
+
+.phone-link:hover,
+.contact-link:hover {
+  color: var(--color-text-light);
+}
+
+/* ==============================
+   Navigation Layout
+================================ */
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg) 0;
+}
+
+/* ==============================
+   Logo
+================================ */
+
+.site-header .logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    font-size 0.3s ease,
+    gap 0.3s ease;
+}
+
+.site-header .logo img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+
+  transition:
+    width 0.3s ease,
+    height 0.3s ease;
+}
+
+.site-header.scrolled .logo {
+  font-size: 21px;
+}
+
+.site-header.scrolled .logo img {
+  width: 26px;
+  height: 26px;
+}
+
+/* ==============================
+   Navigation Links
+================================ */
+
+.site-header .nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.site-header .nav-link {
+  position: relative;
+  display: inline-block;
+
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: color 0.3s ease;
+}
+
+.site-header .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+
+  transition:
+    width 0.3s ease,
+    left 0.3s ease;
+}
+
+.site-header .nav-link:hover {
+  color: var(--color-accent);
+}
+
+.site-header .nav-link:hover::after {
+  left: 0;
+  width: 100%;
+}
+
+/* ==============================
+   Booking Button
+================================ */
+
+.site-header .book-service-btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.7rem 1.2rem;
+  border: 1px solid var(--color-accent-dark);
+  border-radius: var(--radius-md);
+
+  background-color: transparent;
+  color: var(--color-text-light);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.site-header .book-service-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(45, 212, 191, 0.25) 50%,
+    transparent 80%
+  );
+
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.site-header .book-service-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  border: 1px solid transparent;
+  border-radius: inherit;
+  pointer-events: none;
+
+  transition: border-color 0.3s ease;
+}
+
+.site-header .book-service-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+  background-color: rgba(13, 148, 136, 0.12);
+  color: var(--color-text-light);
+
+  box-shadow:
+    0 0 8px rgba(45, 212, 191, 0.25),
+    0 0 20px rgba(45, 212, 191, 0.2),
+    inset 0 0 8px rgba(45, 212, 191, 0.08);
+}
+
+.site-header .book-service-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.site-header .book-service-btn:hover::after {
+  border-color: rgba(45, 212, 191, 0.5);
+}
+
+/* ==============================
+   Keyboard Focus
+================================ */
+
+.site-header .nav-link:focus-visible,
+.site-header .book-service-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+/* ==============================
+   Scroll-to-Top Button
+================================ */
+
+.scroll-to-top {
+  position: fixed;
+  right: var(--spacing-xl);
+  bottom: var(--spacing-xl);
+  z-index: 1000;
+
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-accent);
+  border-radius: 50%;
+
+  background: var(--color-background-alt);
+  color: var(--color-accent);
+  font-size: 24px;
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background: var(--color-background-hover);
+  color: var(--color-text-light);
+  transform: translateY(-3px);
+}
+
+.scroll-to-top:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ==============================
+   Reduced Motion
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header,
+  .site-header .header-top,
+  .site-header .logo,
+  .site-header .logo img,
+  .site-header .nav-link,
+  .site-header .nav-link::after,
+  .site-header .book-service-btn,
+  .site-header .book-service-btn::before,
+  .site-header .book-service-btn::after,
+  .scroll-to-top {
+    transition: none;
+  }
+}
+
+/* ==============================
+   Tablet and Mobile
+================================ */
+
+@media (max-width: 900px) {
+  /* Header */
+
+  .site-header .header-top {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm) var(--spacing-md);
+    max-height: 60px;
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
+
+  .header-tagline {
+    display: none;
+  }
+
+  .site-header nav {
+    width: 100%;
+    padding: var(--spacing-md);
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .site-header.scrolled nav {
+    gap: var(--spacing-sm);
+  }
+
+  .site-header.scrolled .logo {
+    font-size: 19px;
+  }
+
+  .site-header.scrolled .logo img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .site-header .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
+
+  .site-header .nav-links a {
+    font-size: 16px;
+  }
+
+  .site-header .book-service-btn {
+    padding: 0.6rem 1rem;
+    font-size: 15px;
+  }
+
+  /* Hero */
+
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+
+  /* Services */
+
+  #services > div {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact */
+
+  #contact > div {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================== Small Mobile Screens ================================ */
+
+@media (max-width: 400px) {
+  /* Header */
+
+  .site-header .logo {
+    font-size: 20px;
+    gap: 0.4rem;
+  }
+
+  .site-header nav img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .site-header .nav-links {
+    gap: 0.75rem var(--spacing-md);
+  }
+
+  .site-header .nav-links a {
+    font-size: 15px;
+  }
+
+  .site-header.scrolled .logo {
+    font-size: 18px;
+  }
+
+  .site-header.scrolled .logo img {
+    width: 22px;
+    height: 22px;
+  }
+}
