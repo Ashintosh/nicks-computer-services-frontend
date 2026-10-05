@@ -74,6 +74,7 @@ function Footer() {
           >
             Source Code <span aria-hidden="true">↗</span>
           </a>
+          <a href="/attributions">Attributions</a>
           <a href="#contact">Get Support</a>
           <a href="/privacy">Privacy Policy</a>
         </div>

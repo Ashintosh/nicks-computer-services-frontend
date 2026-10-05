@@ -1,28 +1,17 @@
 import './App.css';
 
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import About from './components/About';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
+import { BrowserRouter, Routes, Route } from 'react-router';
+import Home from './pages/Home/Home';
+import Attributions from './pages/Attributions/Attributions';
 
 function App() {
   return (
-    <>
-      <Header />
-
-      <main>
-        <Hero />
-        <Services />
-        <About />
-        <Contact />
-      </main>
-
-      <Footer />
-      <ScrollToTop />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/attributions" element={<Attributions />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
