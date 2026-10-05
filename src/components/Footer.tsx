@@ -1,3 +1,5 @@
+const currentYear = new Date().getFullYear();
+
 function Footer() {
   return (
     <footer className="site-footer">
@@ -68,7 +70,7 @@ function Footer() {
         <div className="footer-column">
           <h4>More</h4>
           <a
-            href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY"
+            href="https://github.com/Ashintosh/nicks-computer-services-frontend"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -82,7 +84,7 @@ function Footer() {
 
       {/* Bottom Bar */}
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Nick's Computer Services. All rights reserved.</p>
+        <p>&copy; {currentYear} Nick's Computer Services. All rights reserved.</p>
         <p>
           Built with <span className="footer-heart">♥</span> by Nick.
         </p>

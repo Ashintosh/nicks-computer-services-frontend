@@ -6,25 +6,24 @@ import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+
+    setIsScrolled((previous) => {
+      if (!previous && scrollY > 80) {
+        return true;
+      }
+
+      if (previous && scrollY < 30) {
+        return false;
+      }
+
+      return previous;
+    });
+  };
+
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-
-      setIsScrolled((previous) => {
-        if (!previous && scrollY > 80) {
-          return true;
-        }
-
-        if (previous && scrollY < 30) {
-          return false;
-        }
-
-        return previous;
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
