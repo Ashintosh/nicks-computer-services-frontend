@@ -1,0 +1,44 @@
+.scroll-to-top {
+  position: fixed;
+  right: var(--spacing-xl);
+  bottom: var(--spacing-xl);
+  z-index: 1000;
+
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-accent);
+  border-radius: 50%;
+
+  background: var(--color-background-alt);
+  color: var(--color-accent);
+  font-size: 24px;
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background: var(--color-background-hover);
+  color: var(--color-text-light);
+  transform: translateY(-3px);
+}
+
+.scroll-to-top:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}

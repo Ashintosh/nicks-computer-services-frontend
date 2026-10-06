@@ -1,11 +1,11 @@
 import './Home.css';
-import Header from '../../components/Header';
+import Header from '../../components/Header/Header';
 import Hero from './Hero';
 import Services from './Services';
 import About from './About';
 import Contact from './Contact';
-import Footer from '../../components/Footer';
-import ScrollToTop from '../../components/ScrollToTop';
+import Footer from '../../components/Footer/Footer';
+import ScrollToTop from '../../components/ScrollToTop/ScrollToTop';
 
 function Home() {
   return (

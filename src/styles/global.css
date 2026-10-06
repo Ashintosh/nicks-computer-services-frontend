@@ -1,0 +1,26 @@
+@import './variables.css';
+@import './fonts.css';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  font: inherit;
+}

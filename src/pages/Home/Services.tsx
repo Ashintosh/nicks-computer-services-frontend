@@ -28,15 +28,17 @@ const services = [
 function Services() {
   return (
     <section id="services">
-      <h2>Services</h2>
+      <div className="section-content">
+        <h2>Services</h2>
 
-      <div>
-        {services.map((service) => (
-          <article key={service.title}>
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
-          </article>
-        ))}
+        <div>
+          {services.map((service) => (
+            <article key={service.title}>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

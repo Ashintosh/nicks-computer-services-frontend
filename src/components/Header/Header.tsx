@@ -1,5 +1,8 @@
+import './Header.css';
+import logo from '../../assets/images/logo.webp';
+import ButtonLink from '../ButtonLink/ButtonLink';
 import { useEffect, useState } from 'react';
-import logo from '../assets/images/logo.webp';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 
@@ -66,9 +69,7 @@ function Header() {
           </a>
           {/* <a href="#" className="nav-link">Blog</a> */}
 
-          <a href="#contact" className="book-service-btn">
-            Book a Service
-          </a>
+          <ButtonLink href="#contact">Book a Service</ButtonLink>
         </div>
       </nav>
     </header>

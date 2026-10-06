@@ -1,3 +1,7 @@
+import './Footer.css';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const currentYear = new Date().getFullYear();
 
 function Footer() {
@@ -14,7 +18,7 @@ function Footer() {
 
           <div className="footer-socials">
             <a
-              href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY"
+              href="https://github.com/Ashintosh"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -28,7 +32,7 @@ function Footer() {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/YOUR_PROFILE"
+              href="https://www.linkedin.com/in/nicholasasmithit"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -74,7 +78,8 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Source Code <span aria-hidden="true">↗</span>
+            Source Code{' '}
+            <FontAwesomeIcon icon={faArrowUpRightFromSquare} size="sm" aria-hidden="true" />
           </a>
           <a href="/attributions">Attributions</a>
           <a href="#contact">Get Support</a>

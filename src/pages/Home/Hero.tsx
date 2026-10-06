@@ -1,8 +1,10 @@
+import ButtonLink from '../../components/ButtonLink/ButtonLink';
+
 function Hero() {
   return (
     <section className="hero">
       <div className="hero-content">
-        <p>Serving Pulaski County Surrounding Areas</p>
+        <p>Serving Pulaski County & Surrounding Areas</p>
 
         <h1>Professional Computer Repair & IT Services</h1>
 
@@ -12,7 +14,10 @@ function Hero() {
           rates.
         </p>
 
-        <a href="#contact">Get in Touch</a>
+        <ButtonLink href="#contact" variant="solid">
+          Get in Touch
+        </ButtonLink>
+        {/* <a href="#contact">Get in Touch</a> */}
       </div>
     </section>
   );

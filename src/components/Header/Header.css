@@ -13,6 +13,7 @@
   transition:
     background-color 0.3s ease,
     box-shadow 0.3s ease;
+  animation: header-enter 500ms ease-out both;
 }
 
 .site-header.scrolled {
@@ -201,87 +202,6 @@
 }
 
 /* ==============================
-   Booking Button
-================================ */
-
-.site-header .book-service-btn {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0.7rem 1.2rem;
-  border: 1px solid var(--color-accent-dark);
-  border-radius: var(--radius-md);
-
-  background-color: transparent;
-  color: var(--color-text-light);
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  white-space: nowrap;
-
-  transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    color 0.3s ease,
-    box-shadow 0.3s ease,
-    transform 0.3s ease;
-}
-
-.site-header .book-service-btn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-
-  background: linear-gradient(
-    110deg,
-    transparent 20%,
-    rgba(45, 212, 191, 0.25) 50%,
-    transparent 80%
-  );
-
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
-}
-
-.site-header .book-service-btn::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-
-  border: 1px solid transparent;
-  border-radius: inherit;
-  pointer-events: none;
-
-  transition: border-color 0.3s ease;
-}
-
-.site-header .book-service-btn:hover {
-  transform: translateY(-2px);
-  border-color: var(--color-accent);
-  background-color: rgba(13, 148, 136, 0.12);
-  color: var(--color-text-light);
-
-  box-shadow:
-    0 0 8px rgba(45, 212, 191, 0.25),
-    0 0 20px rgba(45, 212, 191, 0.2),
-    inset 0 0 8px rgba(45, 212, 191, 0.08);
-}
-
-.site-header .book-service-btn:hover::before {
-  transform: translateX(100%);
-}
-
-.site-header .book-service-btn:hover::after {
-  border-color: rgba(45, 212, 191, 0.5);
-}
-
-/* ==============================
    Keyboard Focus
 ================================ */
 
@@ -292,70 +212,17 @@
 }
 
 /* ==============================
-   Scroll-to-Top Button
+   Animations
 ================================ */
+@keyframes header-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
 
-.scroll-to-top {
-  position: fixed;
-  right: var(--spacing-xl);
-  bottom: var(--spacing-xl);
-  z-index: 1000;
-
-  width: 48px;
-  height: 48px;
-  border: 1px solid var(--color-accent);
-  border-radius: 50%;
-
-  background: var(--color-background-alt);
-  color: var(--color-accent);
-  font-size: 24px;
-  cursor: pointer;
-
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-
-  transition:
-    opacity 0.3s ease,
-    visibility 0.3s ease,
-    transform 0.3s ease,
-    background 0.3s ease,
-    color 0.3s ease;
-}
-
-.scroll-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.scroll-to-top:hover {
-  background: var(--color-background-hover);
-  color: var(--color-text-light);
-  transform: translateY(-3px);
-}
-
-.scroll-to-top:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 3px;
-}
-
-/* ==============================
-   Reduced Motion
-================================ */
-
-@media (prefers-reduced-motion: reduce) {
-  .site-header,
-  .site-header .header-top,
-  .site-header .logo,
-  .site-header .logo img,
-  .site-header .nav-link,
-  .site-header .nav-link::after,
-  .site-header .book-service-btn,
-  .site-header .book-service-btn::before,
-  .site-header .book-service-btn::after,
-  .scroll-to-top {
-    transition: none;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
